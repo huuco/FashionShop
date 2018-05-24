@@ -3,8 +3,8 @@ class SearchController < ApplicationController
     @search = params[:search].strip
 
     if @search.present?
-      @products = Product.search(@search).page(params[:page]).
-        per(Settings.products.record_per_page)
+      @products = Product.search(@search).page(params[:page])
+        .per Settings.products.record_per_page
     else
       flash.now[:warning] = t "search.empty_search"
     end

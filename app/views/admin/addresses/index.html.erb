@@ -23,22 +23,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @addresses.each do |address| %>
-          <tr class="odd gradeX" align="center">
-            <td><%= address.id %></td>
-            <td><%= address.alias %></td>
-            <td><%= address.full_name %></td>
-            <td class="center">
-              <i class="fa fa-pencil fa-fw"></i>
-              <%= link_to t(".edit"), edit_admin_address_path(address) %>
-            </td>
-            <td class="center">
-              <i class="fa fa-trash-o  fa-fw"></i>
-              <%= link_to t(".delete"), admin_address_path(address),
-                method: :delete, data: {confirm: t(".you_sure")} %>
-            </td>
-          </tr>
-          <% end %>
+         <%= render partial: "address", colllection: @addresses, as: :address %>
         </tbody>
       </table>
       <%= paginate @addresses %>

@@ -14,19 +14,30 @@
       </li>
       <li>
         <%= link_to "/admin" do %>
-          <i class="fa fa-dashboard fa-fw"></i> Dashboard
+          <i class="fa fa-dashboard fa-fw"></i><%= t "amind.dashboard" %>
         <% end %>
       </li>
       <li>
-        <%= link_to admin_users_path do %>
-          <i class="fa fa-bar-chart-o fa-fw"></i> <%= t ".user" %>
+        <%= link_to "/admin" do %>
+          <i class="fa fa-bar-chart-o fa-fw"></i> <%= t "admin.user" %>
           <span class="fa arrow"></span>
         <% end %>
       </li>
       <li>
-        <%= link_to admin_addresses_path do %>
-          <i class="fa fa-bar-chart-o fa-fw"></i> <%= t ".address" %>
-          <span class="fa arrow"></span>
+        <%= link_to admin_categories_url  do %>
+        <i class="fa fa-bar-chart-o fa-fw"></i><%= t "admin.category" %>
+        <span class="fa arrow"></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_brands_url  do %>
+        <i class="fa fa-bar-chart-o fa-fw"></i><%= t "admin.brand" %>
+        <span class="fa arrow"></span>
+        <% end %>
+      </li><li>
+        <%= link_to admin_products_url  do %>
+        <i class="fa fa-bar-chart-o fa-fw"></i><%= t "admin.product" %>
+        <span class="fa arrow"></span>
         <% end %>
       </li>
       <li>
@@ -40,6 +51,16 @@
           <i class="fa fa-bar-chart-o fa-fw"></i> <%= t ".order" %>
           <span class="fa arrow"></span>
         <% end %>
+        <%= link_to admin_shippings_path do %>
+          <i class="fa fa-bar-chart-o fa-fw"></i> <%= t ".address" %>
+          <span class="fa arrow"></span>
+        <% end %>
+        <li>
+        <%= link_to admin_slides_path do %>
+          <i class="fa fa-bar-chart-o fa-fw"></i> <%= t ".slide" %>
+          <span class="fa arrow"></span>
+        <% end %>
+      </li>
       </li>
     </ul>
   </div>

@@ -8,5 +8,6 @@ class Address < ApplicationRecord
   validates :country, presence: true
   validates :phone, presence: true
   validates :user_id, presence: true
-  ADDRESS_PARAMS = %i(alias full_name post_code city country phone user_id)
+  ADDRESS_PARAMS = %i(alias full_name post_code city
+    country phone user_id).freeze
 end

@@ -12,7 +12,7 @@ class Admin::AddressesController < Admin::BaseController
       flash[:success] = t ".save_success"
       redirect_to admin_addresses_path
     else
-      render :new
+      render :edit
     end
   end
 

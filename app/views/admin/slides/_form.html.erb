@@ -1,0 +1,22 @@
+<%= form_for [:admin, @slide] do |f| %>
+  <%= render "layouts/admin/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label :title, t("admin.slides.title") %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image, t("admin.slides.description") %>
+    <%= f.text_field :image, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :link, t("admin.slides.link") %>
+    <%= f.text_field :link, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <span class="picture">
+      <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>
+    </span>
+  </div>
+  <%= f.button t("admin.save"), type: :submit, class: "btn btn-default" %>
+  <%= f.button t("admin.reset"), type: :reset, class: "btn btn-default" %>
+<% end %>
