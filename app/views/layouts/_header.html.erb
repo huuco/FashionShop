@@ -1,0 +1,44 @@
+<div id="header">
+    <div class="header-top">
+      <div class="container">
+        <div class="pull-left auto-width-left">
+          <ul class="top-menu menu-beta l-inline">
+            <li><a href=""><i class="fa fa-home"></i><%= t "address_store" %></a></li>
+            <li><a href=""><i class="fa fa-phone"></i><%= t "hot_line" %></a></li>
+          </ul>
+        </div>
+        <div class="pull-right auto-width-right">
+          <ul class="top-details menu-beta l-inline">
+            <li><a href="#"><i class="fa fa-user"></i><%= t "account" %></a></li>
+            <li><%= link_to t("log_in"), login_path %></li>
+            <li><%= link_to t("sign_up"), signup_path %></li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="header-body">
+      <div class="container beta-relative">
+        <div class="pull-left">
+          <%= link_to image_tag("logo-cake.png",alt: "logo",class: "logo"), root_path %>
+        </div>
+        <div class="pull-right beta-components space-left ov">
+          <div class="space10">&nbsp;</div>
+          <div class="beta-comp">
+            <form role="search" method="get" id="searchform" action="/">
+                <input type="text" value="" name="s" id="s" placeholder="<%= t "search_item" %>" />
+                <button class="fa fa-search" type="submit" id="searchsubmit"></button>
+            </form>
+          </div>
+
+          <div class="beta-comp">
+            <div class="cart">
+              <div class="beta-select"><i class="fa fa-shopping-cart">
+                </i><%= link_to t("cart"), shopping_cart_path %><i class="fa fa-chevron-down"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>

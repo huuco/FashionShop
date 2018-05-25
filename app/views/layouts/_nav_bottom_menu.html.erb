@@ -1,0 +1,22 @@
+<div class="header-bottom" style="background-color: #0277b8;">
+      <div class="container">
+        <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class="beta-menu-toggle-text"><%= t "menu" %></span> <i class="fa fa-bars"></i></a>
+        <div class="visible-xs clearfix"></div>
+        <nav class="main-menu">
+          <ul class="l-inline ov">
+            <li><%= link_to t("home"), root_path %></li>
+            <li><%= link_to t("products"), show_path %></a>
+              <ul class="sub-menu">
+                <li><a href="product_type.html"><%= t "item1" %></a></li>
+                <li><a href="product_type.html"><%= t "item2" %></a></li>
+                <li><a href="product_type.html"><%= t "item3" %></a></li>
+              </ul>
+            </li>
+            <li><%= link_to t("introduce"), about_path %></li>
+            <li><%= link_to t("contact"), contact_path %></li>
+          </ul>
+          <div class="clearfix"></div>
+        </nav>
+      </div>
+    </div>
+  </div>
