@@ -87,12 +87,51 @@ en:
         edit: "Edit"
         delete: "Delete"
         you_sure: "You sure?"
+    orders:
+      index:
+        title: "Orders"
+        list: "List"
+        id: "ID"
+        transaction_id: "Transaction id"
+        email: "Email"
+        total: "Total"
+        status: "Status"
+        payment: "Payment"
+        detail: "detail"
+      list:
+        detail: "Detail"
+      show:
+        title: "Order"
+        detail: "Detail"
+        btn_save: "Save"
+        address: "Address"
+        email: "Email: "
+        full_name: "Full name: "
+        post_code: "Post code: "
+        city: "City: "
+        country: "Country: "
+        phone: "Phone: "
+        name: "Name"
+        id: "Id"
+        price: "Price"
+        quantity: "Quanity"
+        total: "Total"
+        status: "Status"
+        shipping: "Shipping"
+        order_total: "Total: "
+        order_not_found: "Order not found"
+        products_list: "Prducts list"
+      update:
+        updated_status_success: "Updated status success"
+        updated_status_error: "Updated status error"
   layouts:
     admin:
       sidebar:
         user: "User"
         address: "Address"
         shipping: "Shipping"
+        order: "Order"
+        brand: "Brand"
   views:
     pagination:
       first: "«"

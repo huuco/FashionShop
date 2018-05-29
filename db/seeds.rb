@@ -34,39 +34,6 @@ end
 30.times do |n|
   Category.create name: Faker::Space.moon
 end
-1.times do |n|
-  Payment.create! name: "COD",
-   description: ""
-end
-1.times do |n|
-  Payment.create! name: "paypal",
-   description: ""
-end
-
-
-10.times do |n|
-  Order.create transaction_id: rand(2000..3000),
-    user_id: rand(1..10),
-    total: 100+n,
-    status: rand(1..2),
-    shipping_id: rand(1..20),
-    payment_id: rand(1..2),
-    address_id: rand(1..20)
-end
-
-10.times do |n|
-  OrderDetail.create product_id: rand(1..30),
-    order_id: rand(1..10),
-    quantity: rand(1..5),
-    total_price: 1500
-end
-30.times do |n|
-  Brand.create name: Faker::Space.planet
-end
-
-30.times do |n|
-  Category.create name: Faker::Space.moon
-end
 
 30.times do |n|
   Product.create name: Faker::LeagueOfLegends.champion,
@@ -78,6 +45,29 @@ end
     brand_id: rand(0..30),
     category_id: rand(31)
 end
+
+
+Payment.create! name: "COD", description: ""
+Payment.create! name: "paypal", description: ""
+
+10.times do |n|
+  Order.create transaction_id: rand(2000..3000),
+    user_id: rand(1..10),
+    total: 100+n,
+    status: rand(0..2),
+    shipping_id: rand(1..20),
+    payment_id: rand(1..2),
+    address_id: rand(1..20)
+end
+
+10.times do |n|
+  OrderDetail.create product_id: rand(1..30),
+    order_id: rand(1..10),
+    quantity: rand(1..5),
+    total_price: 1500
+end
+
+
 30.times do |n|
   image = "sp"+n.to_s+".jpg"
   product_id = n.to_s

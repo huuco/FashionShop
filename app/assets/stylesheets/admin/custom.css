@@ -1,22 +1,44 @@
-.remember_me{
+.remember_me {
   margin-left: 0 !important;
 }
 
-.txt_rememeber_login{
-  display: block; margin-left: 20px;
+.txt_rememeber_login {
+  display: block;
+  margin-left: 20px;
 }
 
-.note_message{
+.note_message {
   margin-left: 250px;
 }
 
-.action_btn{margin-bottom: 15px;
+.action_btn {
+  margin-bottom: 15px;
 }
 
-#page-wrapper .page-content{
+#page-wrapper .page-content {
   padding-bottom:120px
 }
 
-.center{
+.center {
   text-align: center
+}
+
+.order-address .address-item {
+  font-weight: 600;
+}
+
+.order-shipping {
+  margin-top: 15px;
+}
+
+.order-total {
+  text-align: right;
+}
+
+.order-total .order-total-label {
+  font-size: 20px;
+}
+
+.order-total .order-total-value {
+  font-size: 30px;
 }

@@ -1,0 +1,13 @@
+<tr class="odd gradeX center">
+  <td><%= order.id %></td>
+  <td><%= order.transaction_id %></td>
+  <td><%= order.user_email %></td>
+  <td><%= number_to_currency order.total, unit: t("currency"),
+    separator: "," %></td>
+  <td><%= order.status %></td>
+  <td><%= order.payment_name %></td>
+  <td class="center">
+    <i class="fa fa-eye fa-fw"></i>
+    <%= link_to t(".detail"), admin_order_path(order) %>
+  </td>
+</tr>

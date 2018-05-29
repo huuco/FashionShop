@@ -1,0 +1,13 @@
+<tr class="odd gradeX center">
+  <td><%= order_detail.id %></td>
+  <td><%= order_detail.product_name %></td>
+  <td>
+    <%= number_to_currency order_detail.product_price,
+      unit: t("currency"), separator: "," %>
+  </td>
+  <td><%= order_detail.quantity %></td>
+  <td>
+    <%= number_to_currency order_detail.total_price,
+      unit: t("currency"), separator: "," %>
+  </td>
+</tr>

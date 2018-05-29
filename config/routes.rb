@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :users
     resources :addresses
     resources :shippings
+    resources :orders
+    resources :brands
   end
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"

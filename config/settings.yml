@@ -1,10 +1,14 @@
 address:
   limit_page: 10
+order:
+  limit_page: 10
 user:
   limit_page: 5
 address:
   limit_page: 10
 shipping:
+  limit_page: 5
+brands:
   limit_page: 5
   title:
     maximum: 255
