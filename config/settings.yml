@@ -4,6 +4,11 @@ order:
   limit_page: 10
 user:
   limit_page: 5
+  email:
+    max_length: 255
+  name_max_length: 255
+  password:
+    min_length: 6
 address:
   limit_page: 10
 shipping:

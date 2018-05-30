@@ -219,9 +219,25 @@ en:
     sign_up: "Sign up"
     log_in: "Log in"
     email: "Email address*"
-    full_name: "Fullname*"
-    address: "Address*"
+    full_name: "Full name*"
+    username: "Username*"
+    username: "Username*"
+    email: "Email*"
     phone: "Phone*"
     password: "Password*"
     re_password: "Re password*"
     register: "Register"
+    create:
+      confirm_email: "Please check email to active account"
+  user_mailer:
+    account_activation:
+      hi: "Hi %{user}"
+      account_activation: "Account activation"
+      active: "Active"
+      welcome: "Welcome to the FashionShop! Click on the link below to activate
+       your account:"
+      title: "FashionShop"
+  account_activations:
+    edit:
+      acount_success: "active account success"
+      acount_danger: "active account error or you have actived before"

@@ -13,8 +13,11 @@ Rails.application.routes.draw do
   get "/contact", to: "static_pages#contact"
   get "/checkout", to: "checkout#index"
   get "/signup", to:"users#new"
+  post "/signup", to:"users#create"
   get "/shopping_cart", to: "cart#shopping_cart"
   get "search(/:search)", to: "search#index" , as: :search
   root "products#index"
   resources :products
+  resources :users, only: %i(new create)
+  resources :account_activations, only: :edit
 end

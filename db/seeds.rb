@@ -9,7 +9,7 @@
     password: "123456",
     password_confirmation: "123456",
     role: 0,
-    active: Time.zone.now
+    activated: 1
 end
 20.times do |n|
   Address.create! alias: "my address"+n.to_s,

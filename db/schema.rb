@@ -134,8 +134,10 @@ ActiveRecord::Schema.define(version: 2018_05_23_065010) do
     t.string "email"
     t.string "password_digest"
     t.string "remember_digest"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
     t.integer "role", default: 1
-    t.boolean "active", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
