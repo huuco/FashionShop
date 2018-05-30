@@ -11,7 +11,10 @@ class Product < ApplicationRecord
     Product.limit(Settings.products.record_per_page).order "created_at DESC"
   end
 
-  def self.search(search)
-    where("name LIKE ?", "%#{search}%" )
+  def self.search search
+    where "name LIKE ?", "%#{search}%"
   end
+  PRODUCT_PARAMS = %i(name price promotion_price quantity short_description
+   long_description tag ref brand_id category_id active).freeze
+  mount_uploader :picture, PictureUploader
 end

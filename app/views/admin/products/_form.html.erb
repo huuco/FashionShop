@@ -1,0 +1,35 @@
+<%= form_for [:admin, @product] do |f| %>
+  <%= render "layouts/admin/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label :name, t("admin.products.name") %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :quantity, t("admin.products.quantity") %>
+    <%= f.text_field :quantity, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :short_description, t("admin.products.short_description") %>
+    <%= f.cktext_area :short_description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :category, t("admin.products.category") %>
+    <%= f.text_field :category, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :brand, t("admin.products.brand") %>
+    <%= f.text_field :brand, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :active, class: "checkbox inline" do %>
+    <%= f.check_box :active %><%= t"admin.products.active" %>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <span class="picture">
+      <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png", multiple: true %>
+    </span>
+  </div>
+  <%= f.button t("admin.save"), type: :submit, class: "btn btn-default" %>
+  <%= f.button t("admin.reset"), type: :reset, class: "btn btn-default" %>
+<% end %>

@@ -2,8 +2,6 @@ address:
   limit_page: 10
 order:
   limit_page: 10
-user:
-  limit_page: 5
 address:
   limit_page: 10
 shipping:
@@ -14,4 +12,21 @@ shipping:
     numericality: 0
 products:
   record_per_page: 8
+  limit_page: 5
 URL_IMAGE: "/upload/"
+users:
+  limit_page: 5
+brands:
+  limit_page: 5
+categories:
+  limit_page: 5
+slides:
+  limit_page: 5
+user:
+  email:
+    max_length: 255
+  name:
+    max_length: 50
+  password:
+    min_length: 6
+limit_picture_size: 5

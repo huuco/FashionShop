@@ -27,7 +27,7 @@ class Admin::ShippingsController < Admin::BaseController
       flash[:success] = t ".save_success"
       redirect_to admin_shippings_path
     else
-      render :update
+      render :edit
     end
   end
 

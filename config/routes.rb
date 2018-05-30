@@ -2,12 +2,18 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
+  get "/signup", to: "users#new"
+  delete "/logout", to: "sessions#destroy"
   namespace :admin do
-    get "/", to: "base#index"
-    resources :users
+    root to: "users#index"
     resources :addresses
-    resources :shippings
+    resources :brands
+    resources :categories
     resources :orders
+    resources :products
+    resources :shippings
+    resources :slides
+    resources :users
   end
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"
