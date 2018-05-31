@@ -2,7 +2,7 @@ class Admin::AddressesController < Admin::BaseController
   before_action :find_address, only: %i(update destroy edit)
 
   def index
-    @addresses = Address.page(params[:page]).per Settings.address.limit_page
+    @addresses = Address.page(params[:page]).per Settings.limit_page
   end
 
   def edit; end

@@ -42,3 +42,7 @@
 .order-total .order-total-value {
   font-size: 30px;
 }
+#searchform {
+  float:right;
+}
+

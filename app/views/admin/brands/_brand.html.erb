@@ -1,0 +1,14 @@
+<tr class="odd gradeX center">
+  <td><%= brand.name %></td>
+  <td><%= brand.products.count %></td>
+    <td><%= brand.description.html_safe? %></td>
+  <td class="center">
+    <i class="fa fa-pencil fa-fw"></i>
+    <%= link_to t("admin.edit"), edit_admin_brand_path(brand) %>
+  </td>
+  <td class="center">
+    <i class="fa fa-trash-o fa-fw"></i>
+    <%= link_to t("admin.delete"), admin_brand_path(brand),
+     method: :delete, data: {confirm: t(".you_sure")}%>
+  </td>
+</tr>

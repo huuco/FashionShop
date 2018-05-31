@@ -12,12 +12,16 @@ Rails.application.routes.draw do
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"
   get "/checkout", to: "checkout#index"
-  get "/signup", to:"users#new"
-  post "/signup", to:"users#create"
+  get "/signup", to: "users#new"
+  post "/signup", to: "users#create"
+  get "/my-account", to: "users#my_account"
+  get "/update-account/:id", to: "users#edit", as: :update_account
+  put "/update-account/:id", to: "users#update"
+  patch "/update-account/:id", to: "users#update"
   get "/shopping_cart", to: "cart#shopping_cart"
-  get "search(/:search)", to: "search#index" , as: :search
+  get "search(/:search)", to: "search#index", as: :search
   root "products#index"
   resources :products
-  resources :users, only: %i(new create)
+  # resources :users
   resources :account_activations, only: :edit
 end

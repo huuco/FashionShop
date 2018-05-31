@@ -2,7 +2,7 @@ class Admin::OrdersController < Admin::BaseController
   before_action :show, only: %i(update)
 
   def index
-    @orders = Order.order_by.page(params[:page]).per Settings.order.limit_page
+    @orders = Order.order_by.page(params[:page]).per Settings.limit_page
   end
 
   def show

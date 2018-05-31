@@ -11,6 +11,8 @@ en:
       logined: "You have logined before. Now, no need login"
     create:
       error_login: "Email or password is not correct"
+      error_active: "Account not activated.
+        Check your email for the activation link."
     destroy:
       logout: "Logout success"
   admin:
@@ -229,6 +231,17 @@ en:
     register: "Register"
     create:
       confirm_email: "Please check email to active account"
+    my_account:
+      title: "My account"
+      information: "Information"
+      my_address: "My address"
+      order_history: "Order history"
+    find_user:
+      user_not_found: "User not found"
+    update:
+      save_success: "Updated complete"
+    edit:
+      update: "Update"
   user_mailer:
     account_activation:
       hi: "Hi %{user}"

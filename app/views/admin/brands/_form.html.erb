@@ -1,0 +1,13 @@
+<%= form_for [:admin, @brand] do |f| %>
+  <%= render "layouts/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label :name, t(".name") %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, t(".description") %>
+    <%= f.cktext_area :description %>
+  </div>
+  <%= f.button t("admin.save"), type: :submit, class: "btn btn-default" %>
+  <%= f.button t("admin.reset"), type: :reset, class: "btn btn-default" %>
+<% end %>

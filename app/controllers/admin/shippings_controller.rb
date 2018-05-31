@@ -2,7 +2,7 @@ class Admin::ShippingsController < Admin::BaseController
   before_action :find_shipping, only: %i(edit destroy update)
 
   def index
-    @shippings = Shipping.page(params[:page]).per Settings.shipping.limit_page
+    @shippings = Shipping.page(params[:page]).per Settings.limit_page
   end
 
   def new
