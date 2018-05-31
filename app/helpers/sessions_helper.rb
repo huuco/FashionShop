@@ -28,4 +28,12 @@ module SessionsHelper
     cookies.delete :user_id
     cookies.delete :remember_token
   end
+
+  def session_cart
+    @cart = session[:cart] || {}
+    @products_cart = @cart.map {|id, quantity| [Product.find_by(id: id), quantity]}
+    @count_product_cart = 0
+    @cart.each {|id, quantity| @count_product_cart+=quantity}
+    @total = total_cart @products_cart
+  end
 end
