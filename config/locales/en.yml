@@ -11,31 +11,11 @@ en:
       logined: "You have logined before. Now, no need login"
     create:
       error_login: "Email or password is not correct"
+      error_active: "Account not activated.
+        Check your email for the activation link."
     destroy:
       logout: "Logout success"
   admin:
-    brands:
-      destroy:
-        delete_success: "Delete success"
-        can't_not: "Can't not brand"
-        update:
-          update_success: "Update success"
-        create:
-          create_success: "Create success"
-        find_brand:
-          not_found_brand: "Not found brand"
-      edit:
-        title: "Edit"
-      new:
-        add: "Add"
-      index:
-        brand: "Brands"
-        search_an_brand: "Search an brand"
-      form:
-        you_sure: "You Sure?"
-        title: "Brand"
-        name: "Name"
-        description: "Description"
     users:
       index:
         title: "List user"
@@ -154,7 +134,6 @@ en:
         address: "Address"
         shipping: "Shipping"
         order: "Order"
-        brand: "Brand"
   views:
     pagination:
       first: "«"
@@ -252,6 +231,17 @@ en:
     register: "Register"
     create:
       confirm_email: "Please check email to active account"
+    my_account:
+      title: "My account"
+      information: "Information"
+      my_address: "My address"
+      order_history: "Order history"
+    find_user:
+      user_not_found: "User not found"
+    update:
+      save_success: "Updated complete"
+    edit:
+      update: "Update"
   user_mailer:
     account_activation:
       hi: "Hi %{user}"

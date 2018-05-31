@@ -1,20 +1,23 @@
-limit_page: 10
+address:
+  limit_page: 10
+order:
+  limit_page: 10
 user:
+  limit_page: 5
   email:
     max_length: 255
   name_max_length: 255
   password:
     min_length: 6
+address:
+  limit_page: 10
 shipping:
+  limit_page: 5
   title:
     maximum: 255
   price:
     numericality: 0
-limit_record: 5
-title:
-  maximum: 255
-price:
-  numericality: 0
 products:
   record_per_page: 8
 URL_IMAGE: "/upload/"
+rememeber_user: "1"

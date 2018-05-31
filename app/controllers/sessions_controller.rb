@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new
     if logged_in?
       flash[:warning] = t ".logined"
-      redirect_user
+      current_user.admin? ? redirect_to(admin_url) : redirect_to(root_url)
     end
   end
 
@@ -10,9 +10,16 @@ class SessionsController < ApplicationController
     user = User.find_by email: params[:session][:email].downcase
 
     if user && user.authenticate(params[:session][:password])
-      login user
-      params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-      redirect_user
+      if user.admin?
+        process_login user, admin_path
+      else
+        if user.activated?
+          process_login user, root_url
+        else
+          flash[:warning] = t ".error_active"
+          redirect_to root_url
+        end
+      end
     else
       flash.now[:danger] = t ".error_login"
       render :new
@@ -27,11 +34,10 @@ class SessionsController < ApplicationController
 
   private
 
-  def redirect_user
-    if current_user.admin?
-      redirect_to admin_url
-    else
-      redirect_to root_url
-    end
+  def process_login user, url
+    login user
+    forget(user)
+    remember(user) if params[:session][:remember_me] == Settings.rememeber_user
+    redirect_to url
   end
 end
