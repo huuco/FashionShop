@@ -5,7 +5,7 @@ class CartsController < ApplicationController
 
   def update
     respond_to do |format|
-      cart = session[:cart] || {}
+      cart = session[:cart] ||= {}
       @qty = params[:qty].to_i
       cart[@product.id.to_s] = @qty if cart[@product.id.to_s]
       session_cart
@@ -15,7 +15,7 @@ class CartsController < ApplicationController
 
   def add
     respond_to do |format|
-      cart = session[:cart] || {}
+      cart = session[:cart] ||= {}
       cart[@product.id.to_s] = cart[@product.id.to_s] ? (cart[@product.id.to_s].to_i + 1) : 1
       session_cart
       format.js
@@ -24,7 +24,7 @@ class CartsController < ApplicationController
 
   def destroy
     respond_to do |format|
-      cart = session[:cart] || {}
+      cart = session[:cart] ||= {}
       cart.delete(@product.id.to_s) if cart[@product.id.to_s]
       session_cart
       format.js

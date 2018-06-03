@@ -1,0 +1,5 @@
+$(".qty-item-cart").text("<%= t "header.item", item: @count_product_cart %>");
+$(".cart-body .cart-items").html("<%= j(render "layouts/item_cart") %>");
+$(".cart-body .cart-total-value").html("<%= number_to_currency(@total, unit: t("currency"), separator: ",") %>");
+toastr.options.timeOut = <%= Settings.toastr_timeout %>;
+toastr.success("<%= t ".added_cart_success" %>");
