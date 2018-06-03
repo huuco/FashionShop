@@ -1,0 +1,37 @@
+<div class="col-sm-4">
+  <h6><%= address.alias %></h6>
+  <div>
+    <label><%= t ".full_name" %></label>
+    <div class="address_content_item">
+      <%= address.full_name %>
+    </div>
+  </div>
+  <div>
+    <label><%= t ".email" %></label>
+    <div class="address_content_item">
+      <%= current_user.email %>
+    </div>
+  </div>
+  <div>
+    <label><%= t ".phone" %></label>
+    <div class="address_content_item">
+      <%= address.phone %>
+    </div>
+  </div>
+  <div>
+    <label><%= t ".post_code" %></label>
+    <div class="address_content_item">
+      <%= address.post_code %>
+    </div>
+  </div>
+  <div>
+    <label><%= t ".address" %></label>
+    <div class="address_content_item">
+      <%= address.city %>, <%= address.country %>
+    </div>
+  </div>
+  <div>
+    <%= link_to t(".update"), edit_address_path(address) %>
+    <%= link_to t(".delete"), address_path(address), method: :delete, data: {confirm: t(".you_sure")} %>
+  </div>
+</div>

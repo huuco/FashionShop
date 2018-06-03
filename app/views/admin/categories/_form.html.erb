@@ -1,0 +1,23 @@
+<%= form_for [:admin, @category] do |f| %>
+  <%= render "layouts/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label :name, t(".name") %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, t("description") %>
+    <%= f.cktext_area :description,class: "form-control" %>
+  </div>
+  <div class="from-group">
+    <%= f.label :parent_id, class: t(".parent_id") %>
+    <%= f.text_field :parent_id, class: "form-control" %>
+  </div>
+  <div class="from-group">
+    <%= f.label :active, class: "checkbox inline " %>
+    <%= f.check_box :active %><%= t ".active" %>
+  </div>
+  <div class="navbar navbar-right">
+    <%= f.button t("admin.save"), type: :submit,class: "btn btn-default" %>
+    <%= f.button t("admin.reset"), type: :reset,class: "btn btn-default" %>
+  </div>
+<% end %>

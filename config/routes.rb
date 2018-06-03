@@ -4,12 +4,13 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
   namespace :admin do
     get "/", to: "base#index"
-    resources :users, except: :show
     resources :addresses
-    resources :shippings
-    resources :orders
     resources :brands, except: :show
+    resources :categories, except: :show
+    resources :orders
     resources :products, except: :show
+    resources :shippings
+    resources :users, except: :show
   end
 
   get "/about", to: "static_pages#about"
@@ -33,4 +34,5 @@ Rails.application.routes.draw do
   post "/update_cart/:id", to: "carts#update", as: :update_cart
   post "/remove_cart/:id", to: "carts#destroy", as: :remove_cart
   resources :carts, only: :index
+  resources :addresses, except: :show
 end

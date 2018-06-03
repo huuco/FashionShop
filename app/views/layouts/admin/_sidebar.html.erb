@@ -43,7 +43,13 @@
       </li>
       <li>
         <%= link_to admin_brands_path do %>
-          <i class="fa fa-bar-chart-o fa-fw"></i> <%= t ".brnad" %>
+          <i class="fa fa-bar-chart-o fa-fw"></i> <%= t ".brand" %>
+          <span class="fa arrow"></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_categories_path do %>
+          <i class="fa fa-bar-chart-o fa-fw"></i> <%= t ".category" %>
           <span class="fa arrow"></span>
         <% end %>
       </li>

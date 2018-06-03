@@ -1,0 +1,21 @@
+<div class="inner-header">
+  <div class="container">
+    <div class="pull-left">
+      <h6 class="inner-title"><%= t "addresses.title" %></h6>
+    </div>
+    <div class="pull-right">
+      <div class="beta-breadcrumb font-large">
+        <%= link_to t("home"), root_path %> /
+        <span><%= t "addresses.title" %></span>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<div class="container">
+  <div id="content" class="content-address">
+  <%= render(partial: "addresses/list", collection: @addresses, as: :address) || t(".note") %>
+  <div class="clearfix"></div>
+  <%= link_to t(".add_new"), new_address_path, class: "btn-add-address btn btn-default" %>
+  </div>
+</div>
