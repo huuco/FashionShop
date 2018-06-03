@@ -16,10 +16,10 @@ class Admin::CategoriesController < Admin::BaseController
     @category = Category.new category_params
 
     if @category.save
-      flash[:success] = t "create_succeed"
+      flash[:success] = t ".create_succeed"
       redirect_to admin_categories_path
     else
-      flash[:danger] = t "create_failed"
+      flash[:danger] = t ".create_failed"
       render :new
     end
   end
@@ -38,9 +38,9 @@ class Admin::CategoriesController < Admin::BaseController
 
   def destroy
     if @category.products.empty? && @destroy
-      flash[:success] = t "delete_succeed"
+      flash[:success] = t ".delete_succeed"
     else
-      flash[:danger] = t "delete_failed"
+      flash[:danger] = t ".delete_failed"
     end
     redirect_to admin_categories_path
   end
