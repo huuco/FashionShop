@@ -86,8 +86,9 @@ ActiveRecord::Schema.define(version: 2018_05_23_065010) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
+    t.float "old_price"
     t.float "price"
-    t.float "promotion_price"
+    t.float "discount"
     t.integer "quantity"
     t.text "short_description"
     t.text "long_description"
