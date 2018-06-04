@@ -12,13 +12,15 @@
     <%= f.label :short_description, t(".short_description") %>
     <%= f.cktext_area :short_description, class: "form-control" %>
   </div>
-  <div class="form-group">
-    <%= f.label :category, t(".category") %>
-    <%= f.text_field :category_id, class: "form-control" %>
+ <div class="form-group">
+    <%= f.label :category_id, t(".choose_user") %>
+    <%= f.select(:category_id, options_from_collection_for_select(Category.all,
+      :id, :name), {}, {class: "form-control"}) %>
   </div>
   <div class="form-group">
-    <%= f.label :brand, t(".brand") %>
-    <%= f.text_field :brand_id, class: "form-control" %>
+    <%= f.label :brand_id, t(".choose_user") %>
+    <%= f.select(:brand_id, options_from_collection_for_select(Brand.all,
+      :id, :name), {}, {class: "form-control"}) %>
   </div>
   <div class="form-group">
     <%= f.label :active, class: "checkbox inline" do %>
@@ -27,7 +29,11 @@
   </div>
   <div class="form-group">
     <span class="picture">
-      <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png", multiple: true %>
+        <%= f.fields_for :images do |image| %>
+          <%= render "image_fields", f: image %>
+        <% end %>
+        <%= link_to_add_association t(".add_a_image"), f,
+          :images, class: "btn btn-primary" %>
     </span>
   </div>
   <%= f.button t("admin.save"), type: :submit, class: "btn btn-default" %>

@@ -2,12 +2,13 @@ class Admin::ProductsController < Admin::BaseController
   before_action :load_product, only: %i(edit update destroy)
 
   def index
-    @products = Product.search_product_name(params[:search])
+    @products = Product.search(params[:search])
       .page(params[:page]).per Settings.limit_page
   end
 
   def new
     @product = Product.new
+    @product.images.build
   end
 
   def create
@@ -46,7 +47,7 @@ class Admin::ProductsController < Admin::BaseController
   private
 
   def product_params
-    params.require(:product).permit Product::PRODUCT_PARAMS
+    params.require(:product).permit Product::ATTR_PARAMS
   end
 
   def load_product

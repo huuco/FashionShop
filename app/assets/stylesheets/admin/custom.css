@@ -49,4 +49,7 @@
     font-size: 30px;
   }
 }
+.thumb img {
+  width: 150px;
+}
 
