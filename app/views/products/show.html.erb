@@ -30,25 +30,32 @@
           </div>
         </div>
         <div class="space40">&nbsp;</div>
-        <div class="woocommerce-tabs">
+        <div class="woocommerce-tabs box-tabs">
           <ul class="tabs">
-            <li><a href="#tab-description">
-              <%= t "products.description" %></a>
+            <li>
+              <a active=".tab-description">
+                <%= t "products.description" %>
+              </a>
             </li>
-            <li><a href="#tab-reviews"><%= t "products.reviews" %></a></li>
+            <li>
+              <a active=".tab-reviews">
+                <%= t "products.reviews" %>
+              </a>
+            </li>
           </ul>
-
-          <div class="panel" id="tab-description">
+          <div class="panel tab-description">
             <p><%= @product.long_description %></p>
           </div>
-          <div class="panel" id="tab-reviews">
+          <div class="panel tab-reviews">
             <p>No Reviews</p>
           </div>
         </div>
         <div class="space50">&nbsp;</div>
-        <%= render partial: "index", collection: @new_product, as: :product %>
+        <h6><%= t ".related_product" %></h6>
+        <%= render partial: "index", collection: @related_product, as: :product %>
       </div>
       <%= render "products/product_right_column" %>
     </div>
   </div>
 </div>
+

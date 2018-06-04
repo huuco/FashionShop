@@ -1,0 +1,8 @@
+<div class="media beta-sales-item">
+  <div class="media-body">
+    <%= link_to product.name, product_path(product) %>
+    <p class="beta-sales-price">
+      <%= number_to_currency(product.promotion_price,
+        unit: t("currency"), separator: ",") %></p>
+  </div>
+</div>

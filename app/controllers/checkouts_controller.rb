@@ -1,19 +1,19 @@
 class CheckoutsController < ApplicationController
   def index
     if session[:cart].empty?
-      flash[:wraming] = t ".empty_cart"
+      flash[:wraning] = t ".empty_cart"
       redirect_to root_path
     else
       if logged_in?
         @order = Order.new
         get_info_order
         return if @addresses.present?
-        flash[:wraming] = t ".need_address"
+        flash[:wraning] = t ".need_address"
         store_location
         redirect_to addresses_path
       else
         store_location
-        flash[:warming] = t ".need_login"
+        flash[:warning] = t ".need_login"
         redirect_to login_path
       end
     end

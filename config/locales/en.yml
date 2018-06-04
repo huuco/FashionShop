@@ -317,7 +317,6 @@ en:
     contact: "Contact"
   products:
     details: "Details"
-    new_product: "New Product"
     style_found: "Style found"
     top_products: "Top Products"
     description: "Description"
@@ -325,6 +324,11 @@ en:
     relate_product: "Related Products"
     typo: "Typography"
     button: "Buttons"
+    show:
+      related_product: "Related product"
+    product_right_column:
+      new_product: "New Product"
+      best_seller: "Best seller"
   search:
     product_not_found: "Products not found"
     list_product: "List Products"

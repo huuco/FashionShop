@@ -17,6 +17,7 @@ class Product < ApplicationRecord
   scope :search_product_name, ->search_product do
     where("products.name LIKE ?", "%#{search_product}%").order(name: :asc)
   end
+  scope :related_product, ->(category_id){where(category_id: category_id)}
 
   scope :order_product_name, ->{order name: :asc}
   scope :order_product_created_at,

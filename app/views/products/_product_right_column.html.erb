@@ -3,27 +3,8 @@
     <h3 class="widget-title"><%= t ".best_seller" %></h3>
     <div class="widget-body">
       <div class="beta-sales beta-lists">
-        <div class="media beta-sales-item">
-          <%= link_to image_tag(Settings.URL_IMAGE+"sp2.jpg"), "#" %>
-          <div class="media-body">
-            <span class="beta-sales-price"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="widget">
-    <h3 class="widget-title"><%= t ".new_product" %></h3>
-    <div class="widget-body">
-      <div class="beta-sales beta-lists">
-        <div class="media beta-sales-item">
-          <a class="pull-left" href="product.html">
-            <img src="assets/dest/images/products/sales/1.png" alt="">
-          </a>
-          <div class="media-body">
-            <span class="beta-sales-price"></span>
-          </div>
-        </div>
+        <%= render partial: "products/product_item", collection: @best_selling,
+          as: :product %>
       </div>
     </div>
   </div>
