@@ -7,10 +7,18 @@
     <% end %>
     </div>
     <div class="single-item-body">
-      <p class="single-item-title"><%= product.name %></p>
+      <p class="single-item-title">
+        <%= link_to product.name, product_path(product) %>
+      </p>
       <p class="single-item-price">
-        <span class="flash-del">$ <%= product.price %></span>
-        <span class="flash-sale">$ <%= product.promotion_price %></span>
+        <span class="flash-del">
+          <%= number_to_currency(product.price,
+            unit: t("currency"), separator: ",") %>
+        </span>
+        <span class="flash-sale">
+          <%= number_to_currency(product.price,
+            unit: t("currency"), separator: ",") %>
+        </span>
       </p>
     </div>
     <div class="single-item-caption">

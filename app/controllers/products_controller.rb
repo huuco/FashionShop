@@ -3,6 +3,8 @@ class ProductsController < ApplicationController
 
   def index
     @new_product = Product.order_product_created_at
+    @slides = Slide.all
+    @categories = Category.all.limit Settings.limit_page
   end
 
   def show; end

@@ -42,4 +42,5 @@ Rails.application.routes.draw do
       get "/ajax_address", to: "checkouts#ajax_address"
     end
   end
+  resources :categories, only: :show
 end

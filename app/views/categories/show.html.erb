@@ -1,0 +1,30 @@
+<div class="inner-header">
+  <div class="container">
+    <div class="pull-left">
+      <h6 class="inner-title"><%= @category.name %></h6>
+      <span><%= t ".products", count: @products.size %></span>
+    </div>
+    <div class="pull-right">
+      <div class="beta-breadcrumb font-large">
+        <%= link_to t(".home"), root_path %> /
+        <span><%= @category.name %></span>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div><div class="container">
+  <div id="content" class="space-top-none">
+    <div class="main-content">
+      <div class="space60">&nbsp;</div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="beta-products-list">
+            <div class="row">
+              <%= render partial: "products/index", collection: @products, as: :product %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

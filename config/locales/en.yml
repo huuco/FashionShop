@@ -315,6 +315,7 @@ en:
     item3: "Item3"
     introduce: "Introduce"
     contact: "Contact"
+    category: "Category"
   products:
     details: "Details"
     new_product: "New Product"
@@ -325,6 +326,8 @@ en:
     relate_product: "Related Products"
     typo: "Typography"
     button: "Buttons"
+    prev: "Prev"
+    next: "Next"
   search:
     product_not_found: "Products not found"
     list_product: "List Products"
@@ -415,3 +418,7 @@ en:
       update: "Update"
       delete: "Delete"
       you_sure: "You sure?"
+  categories:
+    categry_not_found: "Category not found"
+    show:
+      products: "%{count} products"
