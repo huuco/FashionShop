@@ -2,8 +2,9 @@ class CreateProducts < ActiveRecord::Migration[5.2]
   def change
     create_table :products do |t|
       t.string :name
+      t.float :old_price
       t.float :price
-      t.float :promotion_price
+      t.float :discount
       t.integer :quantity
       t.text :short_description
       t.text :long_description

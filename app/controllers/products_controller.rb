@@ -6,9 +6,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @related_product = Product.related_product(@product.id)
+    @related_product = Product.related_product(@product.category_id).limit 4
     @new_product = Product.order_product_created_at
-    best_selling_id_product = OrderDetail.best_selling
     @best_selling = OrderDetail.best_selling.map(&:product)
   end
 

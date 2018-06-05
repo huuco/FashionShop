@@ -2,7 +2,7 @@ class Admin::BrandsController < Admin::BaseController
   before_action :load_brand, only: %i(edit update destroy)
 
   def index
-    @brands = Brand.search_brand(params[:search])
+    @brands = Brand.search_name(params[:search])
                    .page(params[:page])
                    .per Settings.limit_page
   end

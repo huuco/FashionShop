@@ -4,8 +4,7 @@
       <div class="col-sm-9">
         <div class="row">
           <div class="col-sm-4">
-            <%= link_to image_tag(Settings.URL_IMAGE+
-              @product.images.first.image) %>
+            <%= link_to image_tag(@product.images.first.image.to_s) %>
           </div>
           <div class="col-sm-8">
             <div class="single-item-body">
