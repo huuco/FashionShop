@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     resources :products, except: :show
     resources :slides, except: :show
     resources :payments, except: :show
+    resources :categories, except: :show do
+      collection do
+        post "/active/:id", to: "categories#active", as: :active
+      end
+    end
   end
 
   get "/about", to: "static_pages#about"

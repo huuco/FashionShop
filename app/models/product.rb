@@ -9,11 +9,10 @@ class Product < ApplicationRecord
   belongs_to :category
 
   validates :name, presence: true
-  validates :old_price, :price, :quantity, presence: true,
-    numericality: {greater_than: Settings.positive}
-  validates :discount, presence: true,
-    numericality: {greater_than: Settings.positive,
-    less_than: Settings.limit_discount}
+  validates :old_price, presence: true
+  validates :discount, presence: true, inclusion: 0..100
+  validates :price, presence: true
+  validates :quantity, presence: true
 
   delegate :name, to: :category, prefix: true, allow_nil: true
   delegate :name, to: :brand, prefix: true

@@ -1,12 +1,12 @@
 <tr class="odd gradeX center">
-  <td><%= category.id %></td>
+  <td><%= index_for_list @categories, category_counter %></td>
   <td><%= category.name %></td>
-  <td><%= category.parent_id %></td>
   <td>
-    <%= form_for [:admin, category] do |f| %>
-    <%= f.check_box :active, data: {remote: true, method: :patch,
-      url: admin_category_path(category)} %>
-  <% end %>
+    <input type="checkbox"
+      class="active_category active_category_<%= category.id %>"
+      <%= "checked" if category.active? %>
+      value="<%= category.active? %>"
+      url="<%= active_admin_categories_path(category) %>" >
   </td>
   <td class="center">
     <i class="fa fa-pencil fa-fw"></i>
@@ -15,6 +15,6 @@
   <td class="center">
     <i class="fa fa-trash-o fa-fw"></i>
     <%= link_to t("admin.delete"), admin_category_path(category),
-      method: :delete, data: {confirm: t("admin.you_sure")} %>
+      method: :delete, data: {confirm: t(".you_sure")} %>
   </td>
 </tr>

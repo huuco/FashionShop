@@ -39,6 +39,31 @@ en:
         add_new: "Add new"
       slide:
         you_sure: "You are sure?"
+    categories:
+      update:
+        update_succeed: "update succeed"
+        update_failed: "update failed"
+      load_category:
+        not_found_category: "Not found category"
+      create:
+        create_succeed: "Create succeed"
+        create_failed: "Create failed"
+      destroy:
+        delete_succeed: "Delete succeed"
+        delete_failed: "Delete failed. Category have product"
+      new:
+        title: "Category"
+      index:
+        submit: "Submit"
+        search_an_category: "Search an category"
+        stt: "Stt"
+        name: "Name"
+        active: "Active"
+        add_new: "Add new"
+        title: "Category"
+      category:
+        you_sure: "You are sure?"
+    slides:
       update:
         update_succeed: "Update succeed"
       load_category:
@@ -49,15 +74,6 @@ en:
         not_found_slide: "Not found slide"
       create:
         create_succeed: "Create succeed"
-    categories:
-      update:
-        update_succeed: "Update succeed"
-        update_failed: "Update failed"
-      load_category:
-        not_found_category: "Not found category"
-      destroy:
-        delete_success: "Delete success"
-        delete_failed: "Delete failed"
     brands:
       destroy:
         delete_success: "Delete success"

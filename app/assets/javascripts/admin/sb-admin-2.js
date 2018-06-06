@@ -18,4 +18,19 @@ jQuery(document).ready(function() {
       caculator_price();
     }
   }
+
+  jQuery(".active_category").click(function(){
+    var active = $(this).val() == "true" ? 0 : 1;
+    var url = $(this).attr("url");
+    jQuery.ajax({
+      url: url,
+      type: "POST",
+      data: {
+        active: active
+      },
+      success: function (result){
+        jQuery(".active_category_" + result.id).val(result.active);
+      }
+    });
+  });
 });

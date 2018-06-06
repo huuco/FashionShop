@@ -1,17 +1,26 @@
 <%= form_for [:admin, @category] do |f| %>
   <%= render "layouts/error_messages", object: f.object %>
   <div class="form-group">
-    <%= f.label :name, t("admin.brands.edit.choose_name") %>
-    <%= f.select(:name, options_from_collection_for_select(Category.all,
-      :id, :name), {}, {class: "form-control"}) %>
+    <%= f.label :name, t("admin.brands.edit.name") %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :description, t("admin.brands.edit.description") %>
     <%= f.cktext_area :description, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :name, t("admin.brands.edit.name") %>
-    <%= f.text_field :name, class: "form-control" %>
+    <%= f.label :active, class: "checkbox inline" %>
+      <%= f.check_box :active, data:{remote: true, method: :patch, url: admin_categories_path(@category)} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :parent_id, t("admin.brands.edit.parent_id") %>
+    <% if @category.new_record? %>
+        <%= f.text_field :parent_id, class: "form-control"  %>
+      <% else %>
+         <%= f.select(:parent_id,
+        options_from_collection_for_select(Category.list(@category.id),
+        :id, :name, @category.parent_id), {}, {class: "form-control"}) %>
+      <% end %>
   </div>
   <%= f.button t("admin.save"), type: :submit, class: "btn btn-default" %>
   <%= f.button t("admin.reset"), type: :reset, class: "btn btn-default" %>
