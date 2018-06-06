@@ -115,3 +115,19 @@
     padding-top: 15px;
   }
 }
+
+.tabs {
+  li {
+    a {
+      cursor: pointer;
+    }
+  }
+}
+
+.panel {
+  display: none;
+}
+
+.tab-description {
+  display: block;
+}

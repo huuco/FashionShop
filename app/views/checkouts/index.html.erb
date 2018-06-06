@@ -75,8 +75,7 @@
               <div class="your-order-item">
                 <% @products_cart.each do |product, qty| %>
                   <div class="media">
-                    <%= link_to image_tag(Settings.URL_IMAGE +
-                      product.images.first.image, class: "img_product") %>
+                    <%= link_to image_tag(product.images.first.image.to_s, class: "img_product") %>
                     <div class="media-body">
                       <p class="font-large"><%= product.name %></p>
                       <p class="font-large">

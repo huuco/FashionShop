@@ -68,6 +68,7 @@ en:
       new:
         add: "Add"
       index:
+        submit: "Submit"
         brand: "Brands"
         search_an_brand: "Search an brand"
         product_count: "Product count"
@@ -78,6 +79,7 @@ en:
         description: "Description"
     users:
       index:
+        submit: "Submit"
         title: "List user"
         search_an_user: "search an fullname, username, email"
       update:
@@ -100,7 +102,9 @@ en:
         brand: "Brand"
         active: "Active"
         you_sure: "You sure"
+        add_a_image: "Add a image"
       index:
+        submit: "Submit"
         search_an_product: "Search an product name"
       destroy:
         delete_success: "Delete success"
@@ -119,7 +123,7 @@ en:
         active: "Active"
         search_an_user: "Search an user"
       edit:
-        eidt: "Edit"
+        title: "Edit"
         you_sure: "you sure"
       update:
         update_succeed: "update succeed"
@@ -127,11 +131,13 @@ en:
       destroy:
         delete_succeed: "delete succeed"
         delete_failed: "delete failed"
-      find_user:
+      load_user:
         not_found_user: "Not found user"
       create:
         create_succeed: "create succeed"
         create_failed: "create failed"
+      image_fields:
+        remove: "Remove"
       product_right_column:
         best_seller: "Best seller"
         new_product: "New products"
@@ -317,7 +323,6 @@ en:
     contact: "Contact"
   products:
     details: "Details"
-    new_product: "New Product"
     style_found: "Style found"
     top_products: "Top Products"
     description: "Description"
@@ -325,6 +330,11 @@ en:
     relate_product: "Related Products"
     typo: "Typography"
     button: "Buttons"
+    show:
+      related_product: "Related product"
+    product_right_column:
+      new_product: "New Product"
+      best_seller: "Best seller"
   search:
     product_not_found: "Products not found"
     list_product: "List Products"

@@ -5,7 +5,11 @@ class ProductsController < ApplicationController
     @new_product = Product.order_product_created_at
   end
 
-  def show; end
+  def show
+    @related_product = Product.related_product(@product.category_id).limit 4
+    @new_product = Product.order_product_created_at
+    @best_selling = OrderDetail.best_selling.map(&:product)
+  end
 
   private
 

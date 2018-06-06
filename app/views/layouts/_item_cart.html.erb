@@ -2,7 +2,7 @@
   <% @products_cart.each do |product, qty| %>
   <div class="cart-item">
     <div class="media">
-      <%= link_to image_tag(Settings.URL_IMAGE + product.images.first.image,
+      <%= link_to image_tag(product.images.first.image.to_s,
         class: "pull-left"), "#" %>
       <div class="media-body">
         <span class="cart-item-title"><%= product.name %></span>

@@ -2,15 +2,18 @@
   <div class="single-item">
     <div class="single-item-header">
     <% if product.images.present? %>
-      <%= link_to image_tag(Settings.URL_IMAGE+product.images.first.image),
+      <%= link_to image_tag(product.images.first.image.to_s),
         product_path(product) %>
     <% end %>
     </div>
     <div class="single-item-body">
       <p class="single-item-title"><%= product.name %></p>
       <p class="single-item-price">
-        <span class="flash-del">$ <%= product.price %></span>
-        <span class="flash-sale">$ <%= product.promotion_price %></span>
+        <span class="flash-del">
+          <% if product.discount > 0 %>
+            <%= product.old_price %>
+          <% end %></span>
+        <span class="flash-sale"><%= product.price %></span>
       </p>
     </div>
     <div class="single-item-caption">
