@@ -1,24 +1,28 @@
-<div class="header-bottom" style="background-color: #0277b8;">
-      <div class="container">
-        <a class="visible-xs beta-menu-toggle pull-right" href="#">
-          <span class="beta-menu-toggle-text"><%= t "nav.menu" %>
-          </span> <i class="fa fa-bars"></i></a>
-        <div class="visible-xs clearfix"></div>
-        <nav class="main-menu">
-          <ul class="l-inline ov">
-            <li><%= link_to t("nav.home"), root_path %></li>
-            <li><%= link_to t("nav.products"), "#" %></a>
-              <ul class="sub-menu">
-                <li><a href="product_type.html"><%= t "nav.item1" %></a></li>
-                <li><a href="product_type.html"><%= t "nav.item2" %></a></li>
-                <li><a href="product_type.html"><%= t "nav.item3" %></a></li>
-              </ul>
-            </li>
-            <li><%= link_to t("nav.introduce"), about_path %></li>
-            <li><%= link_to t("nav.contact"), contact_path %></li>
+<div class="header-bottom">
+  <div class="container">
+    <a class="visible-xs beta-menu-toggle pull-right" href="#">
+      <span class="beta-menu-toggle-text">
+        <%= t "nav.menu" %>
+      </span>
+      <i class="fa fa-bars"></i>
+    </a>
+    <div class="visible-xs clearfix"></div>
+    <nav class="main-menu">
+      <ul class="l-inline ov">
+        <li><%= link_to t("nav.home"), root_path %></li>
+        <li><%= link_to t("nav.category") %>
+          <ul class="sub-menu">
+            <% @categories.each do |category| %>
+              <li>
+                <%= link_to category.name, category_path(category) %>
+              </li>
+            <% end %>
           </ul>
-          <div class="clearfix"></div>
-        </nav>
-      </div>
-    </div>
+        </li>
+        <li><%= link_to t("nav.introduce"), about_path %></li>
+        <li><%= link_to t("nav.contact"), contact_path %></li>
+      </ul>
+      <div class="clearfix"></div>
+    </nav>
   </div>
+</div>

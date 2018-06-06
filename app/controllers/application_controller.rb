@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include ApplicationHelper
   before_action :session_cart
+  before_action :index
 
   def session_cart
     @cart = session[:cart] || {}
@@ -18,5 +19,9 @@ class ApplicationController < ActionController::Base
       @total += product.promotion_price * quantity
     end
     @total
+  end
+
+  def index
+    @categories = Category.all.limit Settings.limit_page
   end
 end
