@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :load_product, only: %i(show)
 
   def index
-    @new_product = Product.order_product_created_at
+    @new_product = Product.order_by_created_at
   end
 
   def show; end

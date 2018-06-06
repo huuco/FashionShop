@@ -1,11 +1,7 @@
 10.times do |n|
-  full_name = "user"+n.to_s
-  username = "user"+n.to_s
-  email = "user"+n.to_s+"@gmail.com"
-  password = "123456"
-  User.create! full_name: full_name,
-    username: username,
-    email: email,
+  User.create! full_name: Faker::Internet.user_name,
+    username: Faker::Internet.user_name,
+    email: Faker::Internet.free_email,
     password: "123456",
     password_confirmation: "123456",
     role: 0,
@@ -21,30 +17,34 @@ end
     user_id: rand(1..10)
 end
 
-20.times do |n|
-  Shipping.create! title: "title"+n.to_s,
-    description: "description",
-    price: 20 + n
-end
 
-30.times do |n|
+Shipping.create! title: "My shipping",
+  description: "",
+  price: 15
+Shipping.create! title: "UPS",
+  description: "",
+  price: 20
+
+
+10.times do |n|
   Brand.create name: Faker::Space.planet,
   description: Faker::Lorem.sentence
 end
 
-30.times do |n|
+10.times do |n|
   Category.create name: Faker::Space.moon
 end
 
-30.times do |n|
+10.times do |n|
   Product.create name: Faker::LeagueOfLegends.champion,
-    price: Faker::Number.decimal(3),
-    promotion_price: Faker::Number.decimal(2, 2),
+    old_price: Faker::Number.decimal(3),
+    price: 0,
+    discount: 5,
     quantity: Faker::Number.number(2),
     short_description: Faker::Lorem.sentence,
     long_description: Faker::Lorem.paragraph,
-    brand_id: rand(0..30),
-    category_id: rand(31)
+    brand_id: rand(1..9),
+    category_id: rand(1..9)
 end
 
 
@@ -52,31 +52,31 @@ Payment.create! name: "COD", description: ""
 Payment.create! name: "paypal", description: ""
 
 10.times do |n|
-  Order.create transaction_id: rand(2000..3000),
+  Order.create transaction_id: SecureRandom.hex,
     user_id: rand(1..10),
     total: 100+n,
     status: rand(0..2),
-    shipping_id: rand(1..20),
+    shipping_id: rand(1..2),
     payment_id: rand(1..2),
     address_id: rand(1..20)
 end
 
 10.times do |n|
-  OrderDetail.create product_id: rand(1..30),
+  OrderDetail.create product_id: rand(1..10),
     order_id: rand(1..10),
     quantity: rand(1..5),
     total_price: 1500
 end
 
 
-29.times do |n|
-  image = "sp"+n.to_s+".jpg"
+9.times do |n|
+  image = "sp"+(n+1).to_s+".jpg"
   Image.create! image: image,
-    product_id: rand(1..20)
+    product_id: n+1
 end
 
-20.times do |n|
-  Slide.create! title: "slie"+n.to_s,
-    image: "image/path"+n.to_s,
+2.times do |n|
+  Slide.create! title: "slider"+(n+1).to_s,
+    image: "slider-"+(n+1).to_s,
     link: "link"
 end

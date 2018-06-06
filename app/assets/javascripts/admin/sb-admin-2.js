@@ -1,27 +1,21 @@
-$(function() {
-    $(window).bind("load resize", function() {
-        topOffset = 50;
-        width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;
-        if (width < 768) {
-            $('div.navbar-collapse').addClass('collapse');
-            topOffset = 100; // 2-row-menu
-        } else {
-            $('div.navbar-collapse').removeClass('collapse');
-        }
+jQuery(document).ready(function() {
+  jQuery("#product_old_price").change(function(){
+    caculator_price()
+  });
+  jQuery("#product_discount").change(function(){
+    caculator_price();
+  });
 
-        height = ((this.window.innerHeight > 0) ? this.window.innerHeight : this.screen.height) - 1;
-        height = height - topOffset;
-        if (height < 1) height = 1;
-        if (height > topOffset) {
-            $("#page-wrapper").css("min-height", (height) + "px");
-        }
-    });
-
-    var url = window.location;
-    var element = $('ul.nav a').filter(function() {
-        return this.href == url;
-    }).addClass('active').parent().parent().addClass('in').parent();
-    if (element.is('li')) {
-        element.addClass('active');
+  function caculator_price() {
+    var old_price = parseFloat(jQuery("#product_old_price").val());
+    var discount = parseFloat(jQuery("#product_discount").val());
+    if (discount>=0 && discount <= 100) {
+      price = old_price * (100 - discount)/100
+      jQuery("#product_price").val(price);
+    } else {
+      alert("nhap lai")
+      jQuery("#product_discount").val(0)
+      caculator_price()
     }
+  }
 });

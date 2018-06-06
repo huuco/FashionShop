@@ -4,21 +4,45 @@
     <%= f.label :name, t(".name") %>
     <%= f.text_field :name, class: "form-control" %>
   </div>
-   <div class="form-group">
-    <%= f.label :quantity, t(".quantity") %>
-    <%= f.text_field :quantity, class: "form-control" %>
+  <div class="form-group">
+    <%= f.label :ref, t(".ref") %>
+    <%= f.text_field :ref, class: "form-control" %>
   </div>
-   <div class="form-group">
+  <div class="form-group">
+    <div class="old_price">
+      <%= f.label :old_price, t(".old_price") %>
+      <%= f.text_field :old_price, class: "form-control" %>
+    </div>
+    <div class="price">
+      <%= f.label :price, t(".price") %>
+      <%= f.text_field :price, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :discount, t(".discount") %>
+    <% if @product.id.present? %>
+      <%= f.number_field :discount, class: "form-control" %>
+    <% else %>
+      <%= f.number_field :discount, class: "form-control", value: 0 %>
+    <% end %>
+  </div>
+  <div class="form-group">
     <%= f.label :short_description, t(".short_description") %>
     <%= f.cktext_area :short_description, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :category, t(".category") %>
-    <%= f.text_field :category_id, class: "form-control" %>
+    <%= f.label :long_description, t(".long_description") %>
+    <%= f.cktext_area :long_description, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :brand, t(".brand") %>
-    <%= f.text_field :brand_id, class: "form-control" %>
+    <%= f.label :category_id, t(".choose_category") %>
+    <%= f.select(:category_id, options_from_collection_for_select(Category.all,
+      :id, :name, @product.category_id), {}, {class: "form-control"}) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :brand_id, t(".choose_brand") %>
+    <%= f.select(:brand_id, options_from_collection_for_select(Brand.all,
+      :id, :name, @product.category_id), {}, {class: "form-control"}) %>
   </div>
   <div class="form-group">
     <%= f.label :active, class: "checkbox inline" do %>
@@ -26,9 +50,18 @@
     <% end %>
   </div>
   <div class="form-group">
+    <%= f.label :image, t(".upload_image") %>
     <span class="picture">
-      <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png", multiple: true %>
+        <%= f.fields_for :images do |image| %>
+          <%= render "image_fields", f: image %>
+        <% end %>
+        <%= link_to_add_association t(".add_image"), f,
+          :images, class: "btn btn-primary" %>
     </span>
+  </div>
+  <div class="form-group">
+    <%= f.label :tag, t(".tag") %>
+    <%= f.text_field :tag, class: "form-control" %>
   </div>
   <%= f.button t("admin.save"), type: :submit, class: "btn btn-default" %>
   <%= f.button t("admin.reset"), type: :reset, class: "btn btn-default" %>

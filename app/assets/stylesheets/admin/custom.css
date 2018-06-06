@@ -50,3 +50,17 @@
   }
 }
 
+.thumb img {
+  width: 150px;
+}
+
+.old_price{
+  display: inline-block;
+  padding-left: 0;
+  width: 50%;
+}
+
+.price{
+  display: inline-block;
+  width: 49%;
+}
