@@ -160,6 +160,7 @@ en:
         new_product: "New products"
     addresses:
       index:
+        stt: "Stt"
         title: "Addresses"
         list: "List"
         id: "ID"

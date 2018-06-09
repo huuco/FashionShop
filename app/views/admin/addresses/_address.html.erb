@@ -1,0 +1,10 @@
+<tr class="odd gradeX" align="center">
+  <td><%= index_for_list @addresses, address_counter %></td>
+  <td><%= address.alias %></td>
+  <td><%= address.full_name %></td>
+  <td class="center">
+    <i class="fa fa-trash-o  fa-fw"></i>
+    <%= link_to t(".delete"), admin_address_path(address),
+      method: :delete, data: {confirm: t(".you_sure")} %>
+  </td>
+</tr>
