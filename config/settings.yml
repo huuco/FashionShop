@@ -5,13 +5,14 @@ max_rate_star: 5
 rate_active: 1
 max_rate_content: 500
 limit_discount: 100
-
+password_email: "123456"
+account_actived: 1
 user:
   email:
     max_length: 255
   name_max_length: 255
   password:
-    min_length: 6
+    min_length: 3
 shipping:
   title:
     maximum: 255
