@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by email: params[:session][:email].downcase
-
     if user && user.authenticate(params[:session][:password])
       if user.admin?
         process_login user
@@ -29,6 +28,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:user_id] = nil
     log_out
     flash[:success] = t ".logout"
     redirect_to login_path
