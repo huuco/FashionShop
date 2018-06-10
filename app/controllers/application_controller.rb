@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include ApplicationHelper
   before_action :session_cart
+  before_action :set_search
 
   def session_cart
     @cart = session[:cart] || {}
@@ -18,5 +19,9 @@ class ApplicationController < ActionController::Base
       @total += product.price * quantity
     end
     @total
+  end
+
+  def set_search
+    @search = Product.search(params[:q])
   end
 end

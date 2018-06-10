@@ -367,6 +367,10 @@ en:
     checkout: "Checkout"
     viewcart: "View cart"
     wishlist: "Wishlist"
+    from_price: "From price"
+    to_price: "To price"
+    name: "Name"
+
   item_cart:
     x: "%{quantity} x "
   nav:
@@ -383,7 +387,6 @@ en:
     contact: "Contact"
   products:
     details: "Details"
-    style_found: "Style found"
     top_products: "Top Products"
     description: "Description"
     reviews: "Reviews"
@@ -411,6 +414,8 @@ en:
     create:
       comment_success: "Comment success, please wait admin approved."
   search:
+    find_product:
+      style_found: "Style found"
     product_not_found: "Products not found"
     list_product: "List Products"
     empty_search: "Enter some thing to find!!"
