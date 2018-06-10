@@ -162,3 +162,19 @@
 .single-item {
   margin-bottom: 15px;
 }
+
+.btn-search {
+  display: block;
+  border: 1px solid $silver;
+  padding: 7px 10px;
+}
+
+.product_search {
+  background: $white;
+  border: 1px solid $silver;
+  display: inline;
+  display: none;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+}

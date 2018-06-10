@@ -43,13 +43,26 @@
       <div class="pull-right beta-components space-left ov">
         <div class="space10">&nbsp;</div>
         <div class="beta-comp">
-          <%= form_tag search_path, method: :get, id: "searchform" do %>
-            <%= text_field_tag :search, params[:search], id: "s",
-              placeholder: "Search an items", require: true %>
-            <%= button_tag type: :submit,id: "searchsubmit" do %>
-            <i class ="fa fa-search"></i>
-              <% end %>
-            <% end %>
+          <span class="btn-search"><i class="fa fa-search"></i></span>
+          <%= search_form_for @search, url: search_path do |f| %>
+            <div class="form-group">
+              <div class="name_contain">
+                <%= f.label :name_or_short_description_or_long_description_cont,
+                  t(".name") %>
+                <%= f.text_field :name_or_short_description_or_long_description_cont,
+                  class: "form-control" %>
+              </div>
+              <div class="price">
+                <%= f.label :price_gteq, t("header.from_price") %>
+                <%= f.text_field :price_gteq, class: "form-control" %>
+              </div>
+              <div class="price">
+                <%= f.label :price_lteq, t("header.to_price") %>
+                <%= f.text_field :price_lteq, class: "form-control" %>
+              </div>
+            </div>
+            <%= f.submit 'Search', class: "btn btn-default search-btn" %>
+          <% end %>
         </div>
         <%= render "layouts/block_cart" %>
       </div>

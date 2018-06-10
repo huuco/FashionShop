@@ -24,7 +24,7 @@ class User < ApplicationRecord
   has_many :wishlists, dependent: :destroy
   has_many :product_wishlists, through: :wishlists, source: :product
 
-  scope :search, (lambda do |search|
+  scope :search_admin, (lambda do |search|
   select(:id, :full_name, :username, :email, :activated, :role).
     where "full_name LIKE :q OR username LIKE :q OR email LIKE :q",
     q: "%#{search}%"

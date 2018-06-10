@@ -4,9 +4,9 @@ class Admin::UsersController < Admin::BaseController
 
   def index
     @users = User.list_user(current_user.id)
-                 .search(params[:search])
-                 .page(params[:page])
-                 .per Settings.limit_page
+      .search_admin(params[:search])
+      .page(params[:page])
+      .per Settings.limit_page
   end
 
   def new

@@ -24,7 +24,7 @@ class Product < ApplicationRecord
     :active, images_attributes: %i(id image image_cache _destroy)].freeze
 
   scope :order_by_name, ->{order name: :asc}
-  scope :search,(lambda do |search|
+  scope :search_admin,(lambda do |search|
     where "name LIKE :q OR price LIKE :q OR quantity LIKE :q OR old_price LIKE :q",
       q: "%#{search}%"
   end

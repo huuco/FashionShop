@@ -6,4 +6,7 @@ module ApplicationHelper
   def currency price
     number_to_currency(price, unit: t("currency"), separator: ",")
   end
+  def set_search
+    @search = Product.search(params[:q])
+  end
 end

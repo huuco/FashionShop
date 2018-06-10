@@ -1,12 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @search = params[:search].strip
-
-    if @search.present?
-      @products = Product.search(@search).page(params[:page]).
-        per(Settings.products.record_per_page)
-    else
-      flash.now[:warning] = t "search.empty_search"
-    end
+    @search = Product.search(params[:q])
+    @products = @search.result
   end
 end

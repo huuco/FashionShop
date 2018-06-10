@@ -2,7 +2,7 @@ class Admin::ProductsController < Admin::BaseController
   before_action :load_product, only: %i(edit update destroy active)
 
   def index
-    @products = Product.search(params[:search])
+    @products = Product.search_admin(params[:search])
       .page(params[:page]).per Settings.limit_page
   end
 

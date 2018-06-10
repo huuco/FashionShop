@@ -37,7 +37,7 @@ end
 10.times do |n|
   Product.create name: Faker::LeagueOfLegends.champion,
     old_price: Faker::Number.decimal(3),
-    price: 0,
+    price: Faker::Commerce.price,
     discount: 5,
     quantity: Faker::Number.number(2),
     short_description: Faker::Lorem.sentence,
