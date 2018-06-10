@@ -1,0 +1,69 @@
+<div class="order_email">
+  <h1><%= t "base_title" %></h1>
+  <div>
+    <label><%= t ".address" %></label>
+    <p>
+      <span><%= t ".email" %></span>
+      <span><%= @order.user_email %></span>
+    </p>
+    <p>
+      <span><%= t ".full_name" %></span>
+      <span><%= @address.full_name %></span>
+    </p>
+    <p>
+      <span><%= t ".post_code" %></span>
+      <span><%= @address.post_code %></span>
+    </p>
+    <p>
+      <span><%= t ".city" %></span>
+      <span><%= @address.city %></span>
+    </p>
+    <p>
+      <span><%= t ".country" %></span>
+      <span><%= @address.country %></span>
+    </p>
+    <p>
+      <span><%= t ".phone" %></span>
+      <span><%= @address.phone %></span>
+    </p>
+  </div>
+  <div>
+    <label><%= t ".product_list" %></label>
+    <table class="product_list">
+      <thead>
+        <tr>
+          <th><%= t ".name" %></th>
+          <th><%= t ".price" %></th>
+          <th><%= t ".quantity" %></th>
+          <th><%= t ".total" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "admin/orders/product_list",
+          collection: @order.order_details, as: :order_detail %>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <table class="order_total">
+      <tbody>
+        <tr>
+          <td><%= t ".subtotal" %></td>
+          <td>
+            <%= currency @order.total - @order.shipping.price %>
+          </td>
+        </tr>
+        <tr>
+          <td><%= t ".shipping" %></td>
+          <td>
+            <%= currency @order.shipping.price %>
+          </td>
+        </tr>
+        <tr>
+          <td><%= t ".order_total" %></td>
+          <td><%= currency @order.total %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

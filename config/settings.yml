@@ -32,4 +32,5 @@ toastr_timeout: 350
 URL_IMAGE: "/upload/"
 products:
   record_per_page: 8
+delay_time: 5
 

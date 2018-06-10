@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   before_save :downcase_email
   before_create :create_activation_digest
+  after_commit :send_activation_email, on: :create
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -68,7 +69,7 @@ class User < ApplicationRecord
   end
 
   def send_activation_email
-    UserMailer.account_activation(self).deliver_now
+    UsersWorker.perform_in(Settings.delay_time.seconds, id, activation_token)
   end
 
   private

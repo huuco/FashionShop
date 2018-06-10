@@ -17,4 +17,11 @@ class Order < ApplicationRecord
 
   ORDER_PARAMS = %i(transaction_id user_id total status shipping_id
     payment_id address_id).freeze
+
+  after_commit :send_order_info, on: :create
+
+  def send_order_info
+    OrdersWorker.perform_in(Settings.delay_time.seconds, id)
+    AdminOrdersWorker.perform_in(Settings.delay_time.seconds, id)
+  end
 end

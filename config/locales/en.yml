@@ -35,6 +35,10 @@ en:
     description: "Description"
     edit: "Edit"
     delete: "Delete"
+    base:
+      index:
+        warning: "You are not admin bro!"
+        need_login: "You need login"
     slides:
       index:
         add_new: "Add new"
@@ -571,3 +575,22 @@ en:
     index:
       home: "Home"
       brands: "Brands"
+  order_mailer:
+    order_info:
+      order_info: "Order info"
+      address: "Address"
+      email: "Email: "
+      full_name: "Full name: "
+      post_code: "Post code: "
+      city: "City: "
+      country: "Country: "
+      phone: "Phone"
+      product_list: "Product list"
+      name: "Name"
+      price: "Price"
+      quantity: "Quantity"
+      total: "Total"
+      order_total: "Order total: "
+      shipping: "Shipping: "
+      subtotal: "Subtotal: "
+      new_order: "New order"

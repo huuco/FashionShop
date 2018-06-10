@@ -1,3 +1,5 @@
+require "sidekiq/web"
+require "admin_constraint"
 Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy"
@@ -20,6 +22,7 @@ Rails.application.routes.draw do
     resources :categories, except: :show do
       post :active, on: :member
     end
+    mount Sidekiq::Web, at: "/sidekiq", constraints: AdminConstraint.new
   end
 
   root "products#index"
@@ -62,4 +65,6 @@ Rails.application.routes.draw do
   end
   resources :categories, only: %i(index show)
   resources :brands, only: %i(index show)
+
+  get "*path", to: redirect("/")
 end

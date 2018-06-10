@@ -1,0 +1,24 @@
+<%= t "base_title" %>
+
+
+<%= t ".address" %>
+
+<%= t ".email" %> <%= @order.user_email %>
+<%= t ".full_name" %><%= @address.full_name %>
+<%= t ".post_code" %><%= @address.post_code %>
+<%= t ".city" %><%= @address.city %>
+<%= t ".country" %><%= @address.country %>
+<%= t ".phone" %><%= @address.phone %>
+
+
+<%= t ".product_list" %>
+
+<%= t ".name" %> | <%= t ".price" %> | <%= t ".quantity" %> | <%= t ".total" %>
+<% @order.order_details.each do |order_detail| %>
+<%= order_detail.product_name %> | <%= currency order_detail.product_price %> | <%= order_detail.quantity %> | <%= currency order_detail.total_price %>
+<% end %>
+
+
+<%= t ".subtotal" %> <%= currency @order.total - @order.shipping.price %>
+<%= t ".shipping" %> <%= currency @order.shipping.price %>
+<%= t ".order_total" %> <%= currency @order.total %>
