@@ -450,6 +450,7 @@ en:
     empty_search: "Enter some thing to find!!"
   users:
     sign_up: "Sign up"
+    edit_account: "Edit account"
     log_in: "Log in"
     email: "Email address*"
     full_name: "Full name*"
@@ -571,3 +572,32 @@ en:
     index:
       home: "Home"
       brands: "Brands"
+  orders_history:
+    index:
+      title: "Orders history"
+      transaction_id: "Transaction id"
+      total: "Total"
+      status: "Status"
+      detail: "Detail"
+    load_order:
+      not_found: "Order not found"
+    show:
+      title: "Order Detail"
+      status: "Status: "
+      email: "Email: "
+      full_name: "Full name: "
+      post_code: "Post code: "
+      city: "City: "
+      country: "Country: "
+      phone: "Phone: "
+      products_list: "Product list"
+      shipping: "Shipping: "
+      payment: "Payment: "
+      name: "Name"
+      Price: "Price"
+      quantity: "Quantity"
+      total: "Total"
+      subtotal: "Subtotal: "
+      order_total: "Order total: "
+
+
