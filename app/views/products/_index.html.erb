@@ -1,6 +1,13 @@
-<div class="col-sm-3">
+<div class="col-sm-3 remove_<%= product.id %>">
   <div class="single-item">
     <div class="single-item-header">
+    <% if request.original_url.include? "wishlists" %>
+      <%= link_to wishlist_path(product),
+        remote: true, method: :delete,
+        class: "beta-btn primary btn-remove-wislist" do %>
+        <i class="fa fa-trash-o"></i>
+      <% end %>
+    <% end %>
     <% image = product.images.present? ?
       product.images.first.image.url : "no_image.png" %>
     <%= link_to image_tag(image),
@@ -24,9 +31,13 @@
       <% end %>
       <%= link_to t("products.details"), product_path(product),
         class: "beta-btn primary" %>
-      <i class="fa fa-chevron-right"></i>
+      <% if logged_in? && !(request.original_url.include? "wishlists") %>
+        <%= link_to product_wishlists_path(product),
+          remote: true, method: :post, class: "beta-btn primary" do %>
+          <i class="fa fa-heart-o"></i>
+        <% end %>
+      <% end %>
       <div class="clearfix"></div>
     </div>
   </div>
 </div>
-

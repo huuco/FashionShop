@@ -33,7 +33,9 @@ Rails.application.routes.draw do
   root "products#index"
   resources :products do
     resources :rates, only: :create
+    resources :wishlists, only: :create
   end
+  resources :wishlists, only: %i(index destroy)
   resources :account_activations, only: :edit
   patch "/update-account/:id", to: "users#update"
   post "/add_to_cart/:id", to: "carts#add", as: :add_to_cart
@@ -53,4 +55,5 @@ Rails.application.routes.draw do
       get "/ajax_address", to: "checkouts#ajax_address"
     end
   end
+  resources :orders_history, only: %i(index show)
 end

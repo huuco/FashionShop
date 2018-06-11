@@ -366,6 +366,7 @@ en:
     total: "Total: "
     checkout: "Checkout"
     viewcart: "View cart"
+    wishlist: "Wishlist"
   item_cart:
     x: "%{quantity} x "
   nav:
@@ -415,6 +416,7 @@ en:
     empty_search: "Enter some thing to find!!"
   users:
     sign_up: "Sign up"
+    edit_user: "Edit user"
     log_in: "Log in"
     email: "Email address*"
     full_name: "Full name*"
@@ -438,6 +440,7 @@ en:
       save_success: "Updated complete"
     edit:
       update: "Update"
+      checkout: "Checkout"
   user_mailer:
     account_activation:
       hi: "Hi %{user}"
@@ -499,3 +502,14 @@ en:
       update: "Update"
       delete: "Delete"
       you_sure: "You sure?"
+  wishlists:
+    create:
+      product_exist: "Producte exist in wishlist"
+      exist: "This product have exist"
+      added: "This product have added"
+    index:
+      title: "Wishlist"
+      home: "Home"
+    destroy:
+      not_found: "Product not found in wishlist"
+      remove_success: "Removed success"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_23_065010) do
+ActiveRecord::Schema.define(version: 2018_06_08_085624) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "alias"
@@ -144,7 +144,6 @@ ActiveRecord::Schema.define(version: 2018_05_23_065010) do
   end
 
   create_table "wishlists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
     t.integer "product_id"
     t.integer "user_id"
     t.datetime "created_at", null: false

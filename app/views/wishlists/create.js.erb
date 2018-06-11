@@ -1,0 +1,6 @@
+toastr.options.timeOut = <%= Settings.toastr_timeout %>;
+<% if @wishlist.errors.count > 0 %>
+  toastr.warning("<%= t ".exist" %>");
+<% else %>
+  toastr.success("<%= t ".added" %>");
+<% end %>

@@ -1,6 +1,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'toastr';
+@import 'color';
 
 .logo {
   width: 100px;
@@ -107,7 +108,7 @@
 }
 
 .box_address_shipping_payment {
-  border: 1px solid #e8e8e8;
+  border: 1px solid $mercury;
 }
 
 .new_order {
@@ -142,6 +143,22 @@
 }
 
 .rate_user {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid $silver;
   margin-top: 15px;
+}
+
+.btn-remove-wislist {
+  background: $ronchi;
+  position: absolute;
+  z-index: 10;
+  i {
+    &:before {
+      color: white;
+      font-size: 15px;
+    }
+  }
+}
+
+.single-item {
+  margin-bottom: 15px;
 }

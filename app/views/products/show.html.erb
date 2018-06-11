@@ -33,6 +33,12 @@
                 method: :post, class: "add-to-cart" do %>
                 <i class="fa fa-shopping-cart"></i>
               <% end %>
+              <% if logged_in? && !(request.original_url.include? "wishlists") %>
+                <%= link_to product_wishlists_path(@product),
+                  remote: true, method: :post, class: "beta-btn primary" do %>
+                  <i class="fa fa-heart-o"></i>
+                <% end %>
+              <% end %>
               <div class="clearfix"></div>
             </div>
           </div>

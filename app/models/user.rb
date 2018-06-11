@@ -21,6 +21,8 @@ class User < ApplicationRecord
   has_many :addresses, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :rates, dependent: :destroy
+  has_many :wishlists, dependent: :destroy
+  has_many :product_wishlists, through: :wishlists, source: :product
 
   scope :search, (lambda do |search|
   select(:id, :full_name, :username, :email, :activated, :role).

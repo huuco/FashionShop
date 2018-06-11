@@ -1,0 +1,7 @@
+toastr.options.timeOut = <%= Settings.toastr_timeout %>;
+<% if @wishlist.nil? %>
+  toastr.warning("<%= t ".not_found" %>");
+<% else %>
+  toastr.success("<%= t ".remove_success" %>");
+<% end %>
+$(".remove_<%= params[:id] %>").remove();

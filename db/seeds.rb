@@ -66,13 +66,6 @@ end
     total_price: 1500
 end
 
-
-9.times do |n|
-  image = "sp"+(n+1).to_s+".jpg"
-  Image.create! image: image,
-    product_id: n+1
-end
-
 2.times do |n|
   Slide.create! title: "slider"+(n+1).to_s,
     image: "slider-"+(n+1).to_s,
