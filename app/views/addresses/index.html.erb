@@ -16,6 +16,9 @@
   <div id="content" class="content-address">
   <%= render(partial: "addresses/list", collection: @addresses, as: :address) || t(".note") %>
   <div class="clearfix"></div>
-  <%= link_to t(".add_new"), new_address_path, class: "btn-add-address btn btn-default" %>
+  <%= link_to t(".add_new"), new_address_path,
+    class: "btn-add-address btn btn-default" %>
+  <%= link_to t(".checkout"), checkouts_path,
+    class: "btn-add-address btn btn-default btn-primary" %>
   </div>
 </div>
