@@ -1,0 +1,102 @@
+<div class="inner-header">
+  <div class="container">
+    <div class="pull-left">
+      <h6 class="inner-title"><%= t ".title" %></h6>
+    </div>
+    <div class="pull-right">
+      <div class="beta-breadcrumb font-large">
+        <%= link_to t(".home"), root_path %> /
+        <span><%= t ".title" %></span>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<div class="container">
+  <div id="content">
+    <div class="col-sm-12">
+      <h5><%= t ".status" %><span><%= @order.status %></span></h5>
+    </div>
+    <div class="col-lg-12">
+      <div class="order-address  pull-left">
+        <h5><%= t ".address" %></h5>
+        <p class="full-name">
+          <span class="address-label"><%= t ".email" %></span>
+          <span class="address-item"><%= @order.address.user.email %></span>
+        </p>
+        <p class="full-name">
+          <span class="address-label"><%= t ".full_name" %></span>
+          <span class="address-item"><%= @order.address.full_name %></span>
+        </p>
+        <p class="post_code">
+          <span class="address-label"><%= t ".post_code" %></span>
+          <span class="address-item"><%= @order.address.post_code %></span>
+        </p>
+        <p class="city">
+          <span class="address-label"><%= t ".city" %></span>
+          <span class="address-item"><%= @order.address.city %></span>
+        <p class="country">
+          <span class="address-label"><%= t ".country" %></span>
+          <span class="address-item"><%= @order.address.country %></span>
+        </p>
+        <p class="phone">
+          <span class="address-label"><%= t ".phone" %></span>
+          <span class="address-item"><%= @order.address.phone %></span>
+        </p>
+      </div>
+      <div class="order-shipping-payment pull-right">
+        <table class="table table-striped table-bordered table-hover">
+          <tbody>
+            <tr>
+              <td><%= t ".shipping" %></td>
+              <td><%= @order.shipping.title %></td>
+            </tr>
+            <tr>
+              <td><%= t ".payment" %></td>
+              <td><%= @order.payment.name %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="order-product">
+        <h5><%= t ".products_list" %></h5>
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr class="center">
+              <th><%= t ".name" %></th>
+              <th><%= t ".price" %></th>
+              <th><%= t ".quantity" %></th>
+              <th><%= t ".total" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "product_list",
+              collection: @order.order_details, as: :order_detail %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="order-total pull-right">
+        <table class="table table-striped table-bordered table-hover">
+          <tbody>
+            <tr>
+              <td><%= t ".subtotal" %></td>
+              <td><%= currency @order.total - @order.shipping.price %></td>
+            </tr>
+            <tr>
+              <td><%= t ".shipping" %></td>
+              <td><%= currency @order.shipping.price %></td>
+            </tr>
+            <tr>
+              <td><%= t ".order_total" %></td>
+              <td><%= currency @order.total %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
