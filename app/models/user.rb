@@ -24,6 +24,7 @@ class User < ApplicationRecord
   has_many :wishlists, dependent: :destroy
   has_many :product_wishlists, through: :wishlists, source: :product
 
+  scope :list_user, ->(current_user_id){where "id != ?", current_user_id}
   scope :search, (lambda do |search|
   select(:id, :full_name, :username, :email, :activated, :role).
     where "full_name LIKE :q OR username LIKE :q OR email LIKE :q",
@@ -39,8 +40,6 @@ class User < ApplicationRecord
     password password_confirmation).freeze
   validates :password, length: {minimum: Settings.user.password.min_length},
    allow_nil: true
-
-  scope :list_user, ->(current_user_id){where "id != ?", current_user_id}
 
   def remember
     self.remember_token = User.new_token

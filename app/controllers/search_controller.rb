@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @search = params[:search].strip
+    @search = params[:search]
 
     if @search.present?
       @products = Product.search(@search).page(params[:page]).

@@ -9,6 +9,12 @@ class Admin::UsersController < Admin::BaseController
                  .per Settings.limit_page
   end
 
+  def show
+    orders = Order.chart_by_total_created_at @user.id
+    @chart_data = []
+    orders.map{|e| @chart_data.push([e.created_at, e.total])}
+  end
+
   def new
     @user = User.new
   end

@@ -1,6 +1,7 @@
 /*
  *= require_self
  *= require custom
+ *= require bootstrap-datepicker
  *= require font-awesome
  *= require_directory "../../../vendor/assets/stylesheets"
  */

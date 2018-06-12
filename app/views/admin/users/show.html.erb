@@ -1,0 +1,16 @@
+<% provide :title, t(".title") %>
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header"><%= t ".title" %>
+          <small><%= t ".order_chart" %></small>
+        </h1>
+      </div>
+      <div class="col-lg-7 page-content">
+      </div>
+        <%= line_chart @chart_data, xtitle: "Time", prefix: "$" ,
+          refresh: 60, download: "boom", colors: ["#0000cc", "#0000cc"] %>
+    </div>
+  </div>
+</div>

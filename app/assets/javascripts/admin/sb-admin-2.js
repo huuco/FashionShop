@@ -63,4 +63,7 @@ $(document).ready(function() {
       }
     });
   });
+  $('.date_time').change(function(){
+    var url = $(this).attr("url")
+  });
 });

@@ -35,6 +35,11 @@ en:
     description: "Description"
     edit: "Edit"
     delete: "Delete"
+    base:
+      index:
+        submit: "Submit"
+        to: "To:"
+        from: "From"
     slides:
       index:
         add_new: "Add new"
@@ -135,6 +140,9 @@ en:
         password_confirmation: "Password confirmation"
         role: "Role"
         acitve: "active"
+      show:
+        order_chart: "Order chart"
+        title: "Show"
     products:
       form:
         name: "Name"

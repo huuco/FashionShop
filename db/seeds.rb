@@ -1,4 +1,4 @@
-10.times do |n|
+30.times do |n|
   User.create! full_name: Faker::Internet.user_name,
     username: Faker::Internet.user_name,
     email: Faker::Internet.free_email,
@@ -43,8 +43,8 @@ end
     quantity: Faker::Number.number(2),
     short_description: Faker::Lorem.sentence,
     long_description: Faker::Lorem.paragraph,
-    brand_id: rand(1..9),
-    category_id: rand(1..9)
+    brand_id: rand(1..10),
+    category_id: rand(1..10)
 end
 
 Payment.create! name: "COD", description: ""

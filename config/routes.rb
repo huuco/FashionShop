@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   namespace :admin do
     get "/", to: "base#index"
+    post "/", to: "base#index"
     resources :addresses
     resources :brands, except: :show
     resources :products, except: :show do
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
     resources :rates, only: %i(index update destroy)
     resources :shippings
     resources :slides, except: :show
-    resources :users, except: :show do
+    resources :users do
       post :activated, on: :member
     end
     resources :categories, except: :show do
