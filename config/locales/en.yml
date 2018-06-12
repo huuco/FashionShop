@@ -23,8 +23,10 @@ en:
       email: "Email"
       password: "Password"
       logined: "You have logined before. Now, no need login"
+      login-google: "Sign in with Google"
     create:
       error_login: "Email or password is not correct"
+      error_active: "Account is not actived"
     destroy:
       logout: "Logout success"
   admin:
@@ -481,6 +483,10 @@ en:
       welcome: "Welcome to the FashionShop! Click on the link below to activate
        your account:"
       title: "FashionShop"
+    info_password_google:
+      info_password: "Thank to login via Google."
+      info_email: "Please check email see infomation!"
+      content: "Thank to login FashionShop. Yours password default :123456. You can user password default to login!Thank you"
   account_activations:
     edit:
       acount_success: "active account success"
@@ -571,3 +577,6 @@ en:
     index:
       home: "Home"
       brands: "Brands"
+  sessions_google:
+    create:
+      info_email: "Please check email see infomation!"

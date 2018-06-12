@@ -14,7 +14,8 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX},
     length: {maximum: Settings.user.email.max_length},
     uniqueness: {case_sensitive: false}
-
+   validates :password, length: {minimum: Settings.user.password.min_length},
+    allow_nil: true
   enum role: %i(admin user)
 
   has_many :orders
@@ -37,8 +38,6 @@ class User < ApplicationRecord
 
   USER_PARAMS = %i(full_name username email
     password password_confirmation).freeze
-  validates :password, length: {minimum: Settings.user.password.min_length},
-   allow_nil: true
 
   scope :list_user, ->(current_user_id){where "id != ?", current_user_id}
 
@@ -69,6 +68,26 @@ class User < ApplicationRecord
 
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
+  end
+
+  def send_info_login_social
+    UserMailer.info_password_google(self).deliver_now
+  end
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).
+      first_or_initialize.tap do |user|
+        user.provider = auth.provider
+        user.uid = auth.uid
+        user.name = auth.info.first_name
+        user.username = auth.info.last_name
+        user.full_name = auth.info.first_name
+        user.email = auth.info.email
+        user.password = Settings.password_email
+        user.image = auth.info.image
+        user.activated = Settings.account_actived
+        user.save!
+    end
   end
 
   private

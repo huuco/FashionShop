@@ -8,12 +8,15 @@ product:
   conditional_max: 100
   conditional_min: 0
   limit_discount: 100
+limit_discount: 100
+password_email: "123456"
+account_actived: 1
 user:
   email:
     max_length: 255
   name_max_length: 255
   password:
-    min_length: 6
+    min_length: 3
 shipping:
   title:
     maximum: 255

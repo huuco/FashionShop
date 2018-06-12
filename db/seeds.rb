@@ -9,7 +9,7 @@
 end
 
 20.times do |n|
-  Address.create! alias: "my address"+n.to_s,
+  Address.create alias: "my address"+n.to_s,
     full_name: Faker::Name.name,
     post_code: Faker::Address.postcode,
     city: Faker::Address.city,
@@ -35,12 +35,12 @@ end
 end
 
 10.times do |n|
-  price_default = Faker::Number.decimal(3)
+  price_default = Faker::Number.decimal(2)
   Product.create name: Faker::LeagueOfLegends.champion,
-    old_price: Faker::Number.decimal(3),
-    price: Faker::Number.decimal(3),
+    old_price: price_default,
+    price: price_default,
     discount: 5,
-    quantity: Faker::Number.number(2),
+    quantity: Faker::Number.number(3),
     short_description: Faker::Lorem.sentence,
     long_description: Faker::Lorem.paragraph,
     brand_id: rand(1..9),

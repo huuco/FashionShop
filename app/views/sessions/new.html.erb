@@ -18,6 +18,9 @@
               <span class="txt_rememeber_login"><%= t ".remember_login" %></span>
             <% end %>
           </div>
+          <div class="google-login">
+            <%= link_to t(".login-google"), "/auth/google_oauth2"  %>
+          </div>
           <div class="form-block">
             <%= f.submit t(".btn_login"),
               class: "btn btn-lg btn-success btn-block" %>
