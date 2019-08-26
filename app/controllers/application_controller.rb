@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include ApplicationHelper
   before_action :session_cart
+  before_action :instagram
 
   def session_cart
     @cart = session[:cart] || {}
@@ -18,5 +19,15 @@ class ApplicationController < ActionController::Base
       @total += product.price * quantity
     end
     @total
+  end
+
+  def instagram
+    InstagramApi.config do |config|
+      config.access_token = ENV["INSTAGRAM_TOKEN"]
+      config.client_id = ENV["INSTAGRAM_CLIENT_ID"]
+      config.client_secret = ENV["INSTAGRAM_CLIENT_SECRET"]
+    end
+    @instagram_data = InstagramApi.user(ENV["INSTAGRAM_USER_ID"])
+      .recent_media.data
   end
 end
